@@ -1,17 +1,19 @@
 public class Inventory implements Runnable
 {
     private int addSub;
-    private int inventorySize;
+    private int inventory;
 
-    public Inventory(int i)
+    public Inventory(int addSub, int inventory)
     {
-        addSub = i;
+        this.addSub = addSub;
+        this.inventory = inventory;
     }
     
-    public void run()
-    {
-        if(addSub = 0) inventory++;
-        else if (addSub = 1) inventory--;
+    @Override
+    public synchronized void run() {
+        if(addSub == 0)inventory++;
+        else if(addSub==1)inventory--;
+        return inventory;
     }
 
 }
